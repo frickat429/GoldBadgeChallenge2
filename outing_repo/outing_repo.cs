@@ -24,32 +24,12 @@ namespace KomodoOuting
             }
             return null ;
         } 
-   
-    
 
-        //Update not used in the challenge but here is what it might look like
-        // public void Updateouting(DateTime date, Outing updatedOuting) 
-        // {
-        // foreach(Outing outing in _outings) 
-        // {
-        // if(outing.Date.Date == date.Date) 
-        // {
-        //     outing.EventType = updatedOuting.EventType;
-        //     outing.NumberOfAttendees = updatedOuting.NumberOfAttendees;
-        //     outing.Date = updatedOuting.Date;
-        //     outing.CostPerPerson = updatedOuting.CostPerPerson;
-        //     outing.TotalCost = updatedOuting.TotalCost;
-        //     break;
-        // }
-        // }
-        // } 
-
-        //Delete not used in the challenge, but here is what it might look like 
-        // public void DeleteOuting(Outing outing) 
-        // {
-        //     _outings.Remove(outing) ;
-        // } 
-
+        //Get all outings 
+        public List<Outing> GetAllOutings() 
+        {
+            return new List<Outing>(_outings);
+        }
         //Calculate combined cost for all outings 
         public decimal CalculateCombinedCost() 
         {
@@ -77,6 +57,32 @@ namespace KomodoOuting
         } 
         return costByType;
     }
+   
+    
+
+        //Update 
+        public void Updateouting(DateTime date, Outing updatedOuting) 
+        {
+        foreach(Outing outing in _outings) 
+        {
+        if(outing.Date.Date == date.Date) 
+        {
+            outing.EventType = updatedOuting.EventType;
+            outing.NumberOfAttendees = updatedOuting.NumberOfAttendees;
+            outing.Date = updatedOuting.Date;
+            outing.CostPerPerson = updatedOuting.CostPerPerson;
+            outing.TotalCost = updatedOuting.TotalCost;
+            break;
+        }
+        }
+        } 
+
+        //Delete not used in the challenge, but here is what it might look like 
+        // public void DeleteOuting(Outing outing) 
+        // {
+        //     _outings.Remove(outing) ;
+        // } 
+
     } 
 
 
